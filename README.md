@@ -3,15 +3,14 @@
 A small agent that reads inbound customer-service email, understands intent, drafts a grounded
 reply, and — most importantly — **decides who presses send**: the AI or a human.
 
-Built for the Klaviyo AI Product Build exercise. Time-boxed to ~2 hours. The goal was not the
-most complex system; it was a clear product decision about *where AI should be trusted versus
-constrained*.
+Time-boxed to ~2 hours. The goal was not the most complex system; it was a clear product
+decision about *where AI should be trusted versus constrained*.
 
 ---
 
 ## The customer problem
 
-For an e-commerce brand (Klaviyo's core customer), a large share of support volume is repetitive
+For an e-commerce brand, a large share of support volume is repetitive
 and low-judgment: "where's my order?" (WISMO), returns, and basic product questions. These are
 slow and expensive to answer by hand, yet a wrong automated answer — a made-up tracking number,
 an unauthorized refund — destroys trust faster than a slow reply ever would.
@@ -44,7 +43,7 @@ Every email runs through four steps:
 | Touches money or an account (returns, refunds, damaged items) | **DRAFT_FOR_REVIEW** | AI drafts; a human presses send. Never auto-acts on money. |
 | Low confidence, negative sentiment, or no matching order | **ESCALATE** | Trust and fraud risk outweigh speed. Hand to a person. |
 
-This mirrors Klaviyo's own stated principle that *the human in the loop matters most*. Money
+Money
 movement and unverified accounts are a **policy** constraint, not a model judgment — no confidence
 score can override them.
 
@@ -195,7 +194,7 @@ draft queue; multi-turn handling; and expanding intents once grounding error rat
 
 ## Use of AI in building this
 
-In the spirit of Klaviyo's interview AI guidelines: I used an AI coding assistant to scaffold the
-boilerplate, mock data, and this README so I could spend the two hours on the product decisions —
-the intent taxonomy, the trust boundary, the grounding constraint, and the success metrics. Every
-design choice here is mine and I can walk through any line of it.
+I used an AI coding assistant to scaffold the boilerplate, mock data, and this README so I could
+spend the two hours on the product decisions — the intent taxonomy, the trust boundary, the
+grounding constraint, and the success metrics. Every design choice here is mine and I can walk
+through any line of it.
