@@ -1,0 +1,11 @@
+# --- Core (LLM mode) -------------------------------------------------------
+# Optional: the agent runs in deterministic fallback mode if not installed / no API key.
+anthropic>=0.39.0
+
+# --- Gmail connector (only needed to run gmail_connector.py) ----------------
+google-api-python-client>=2.100.0
+google-auth-httplib2>=0.2.0
+google-auth-oauthlib>=1.2.0
+
+# --- Tests (optional; tests/run_evals.py needs no dependencies) -------------
+pytest>=8.0.0

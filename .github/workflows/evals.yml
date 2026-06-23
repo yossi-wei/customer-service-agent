@@ -1,0 +1,28 @@
+name: evals
+
+# Quality gate: every push and PR runs the triage eval suite. A regression that changes how
+# an email is routed (e.g. something that should escalate starts auto-sending) fails the build.
+on:
+  push:
+  pull_request:
+
+jobs:
+  triage-evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The eval runner forces deterministic fallback mode and needs no dependencies,
+      # so the gate is fast and never flakes on a live model or network.
+      - name: Run triage evals
+        run: python3 tests/run_evals.py
+
+      # Optional: also run the pytest view of the same cases when pytest is available.
+      - name: Run pytest (parametrized cases)
+        run: |
+          pip install pytest
+          pytest -q

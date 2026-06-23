@@ -1,0 +1,35 @@
+{
+  "_description": "Baseline eval set — one case per route. Drop additional *.json files in this folder and the runner picks them up automatically.",
+  "cases": [
+    {
+      "name": "wismo_in_transit",
+      "email": {"from": "maya.r@example.com", "subject": "Where is my order?", "body": "Hi, I ordered two tees last week (order BR-10231) and haven't seen them yet. When will they arrive?"},
+      "expect": {"action": "AUTO_SEND", "intent": "order_status"}
+    },
+    {
+      "name": "wismo_still_processing",
+      "email": {"from": "priya.s@example.com", "subject": "order status", "body": "Just checking on my hoodie order BR-10250, hasn't shipped yet?"},
+      "expect": {"action": "AUTO_SEND", "intent": "order_status"}
+    },
+    {
+      "name": "return_within_window_drafts_for_human",
+      "email": {"from": "deon.w@example.com", "subject": "Return this mug", "body": "The mug from order BR-10199 is fine but I changed my mind. Can I return it for a refund?"},
+      "expect": {"action": "DRAFT_FOR_REVIEW", "intent": "return_refund"}
+    },
+    {
+      "name": "angry_refund_escalates",
+      "email": {"from": "sam.k@example.com", "subject": "Refund please", "body": "My bottle (BR-10188) was delivered over 30 days ago but I want my money back. This is ridiculous."},
+      "expect": {"action": "ESCALATE", "intent": "return_refund"}
+    },
+    {
+      "name": "no_order_match_escalates",
+      "email": {"from": "unknown.person@example.com", "subject": "Never got my package", "body": "I never received my order and I want a full refund right now."},
+      "expect": {"action": "ESCALATE", "intent": "return_refund"}
+    },
+    {
+      "name": "unanswerable_product_question_escalates",
+      "email": {"from": "maya.r@example.com", "subject": "Do these shrink?", "body": "Quick question before my tees arrive — are the Everyday Tees pre-shrunk?"},
+      "expect": {"action": "ESCALATE", "intent": "product_question"}
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "_description": "Example of a second, pluggable case file. Add as many of these as you like.",
+  "cases": [
+    {
+      "name": "damaged_item_drafts_for_human",
+      "email": {"from": "deon.w@example.com", "subject": "Mug arrived broken", "body": "My order BR-10199 showed up and the mug is cracked / defective."},
+      "expect": {"action": "DRAFT_FOR_REVIEW", "intent": "damaged_wrong"}
+    },
+    {
+      "name": "vague_message_escalates",
+      "email": {"from": "priya.s@example.com", "subject": "hello", "body": "hi, I have a question"},
+      "expect": {"action": "ESCALATE", "intent": "other"}
+    }
+  ]
+}

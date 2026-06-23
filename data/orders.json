@@ -1,0 +1,58 @@
+{
+  "orders": [
+    {
+      "order_id": "BR-10231",
+      "email": "maya.r@example.com",
+      "customer_name": "Maya R.",
+      "status": "shipped",
+      "carrier": "UPS",
+      "tracking": "1Z999AA10123456784",
+      "ordered_at": "2026-06-14",
+      "expected_delivery": "2026-06-23",
+      "items": [{"sku": "TEE-NVY-M", "name": "Everyday Tee (Navy, M)", "qty": 2, "price": 28.0}],
+      "total": 56.0,
+      "delivered": false
+    },
+    {
+      "order_id": "BR-10199",
+      "email": "deon.w@example.com",
+      "customer_name": "Deon W.",
+      "status": "delivered",
+      "carrier": "USPS",
+      "tracking": "9400111899223817658431",
+      "ordered_at": "2026-06-02",
+      "expected_delivery": "2026-06-09",
+      "delivered_at": "2026-06-09",
+      "items": [{"sku": "MUG-CER-01", "name": "Ceramic Mug 12oz", "qty": 1, "price": 18.0}],
+      "total": 18.0,
+      "delivered": true
+    },
+    {
+      "order_id": "BR-10250",
+      "email": "priya.s@example.com",
+      "customer_name": "Priya S.",
+      "status": "processing",
+      "carrier": null,
+      "tracking": null,
+      "ordered_at": "2026-06-21",
+      "expected_delivery": "2026-06-27",
+      "items": [{"sku": "HOOD-BLK-L", "name": "Heavyweight Hoodie (Black, L)", "qty": 1, "price": 72.0}],
+      "total": 72.0,
+      "delivered": false
+    },
+    {
+      "order_id": "BR-10188",
+      "email": "sam.k@example.com",
+      "customer_name": "Sam K.",
+      "status": "delivered",
+      "carrier": "FedEx",
+      "tracking": "612345678901",
+      "ordered_at": "2026-05-20",
+      "expected_delivery": "2026-05-27",
+      "delivered_at": "2026-05-27",
+      "items": [{"sku": "BTL-STL-750", "name": "Insulated Bottle 750ml", "qty": 1, "price": 34.0}],
+      "total": 34.0,
+      "delivered": true
+    }
+  ]
+}
