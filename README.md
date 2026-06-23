@@ -82,6 +82,8 @@ python3 agent.py
 For live LLM classification and drafting:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 cp .env.example .env   # add your ANTHROPIC_API_KEY
 pip install -r requirements.txt
 python3 agent.py
@@ -115,6 +117,8 @@ Gmail behavior:
 
 ```bash
 # One time: create an OAuth "Desktop app" client in Google Cloud, download as credentials.json
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 python3 gmail_connector.py            # safe dry-run over unread inbox
 python3 gmail_connector.py --apply    # actually send/draft/label

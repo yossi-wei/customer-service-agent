@@ -20,6 +20,12 @@ import os
 import re
 from dataclasses import dataclass, asdict
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 import guardrails
 import tools
 
